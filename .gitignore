@@ -1,0 +1,9 @@
+.gradle/
+build/
+target/
+.idea/
+*.log
+
+node_modukes/
+test-results/
+target/site/serenity
