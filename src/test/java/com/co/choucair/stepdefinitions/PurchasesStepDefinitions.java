@@ -1,5 +1,7 @@
 package com.co.choucair.stepdefinitions;
 
+import com.co.choucair.tasks.AddToCart;
+import com.co.choucair.tasks.CompletePurchases;
 import com.co.choucair.tasks.Login;
 import com.co.choucair.tasks.OpenPage;
 import io.cucumber.java.Before;
@@ -26,10 +28,12 @@ public class PurchasesStepDefinitions {
     }
     @When("they add all products")
     public void theyAddAllProducts() {
+        OnStage.theActorInTheSpotlight().attemptsTo(AddToCart.theProducts());
 
     }
     @When("they enter the purchase details")
     public void theyEnterThePurchaseDetails() {
+        OnStage.theActorInTheSpotlight().attemptsTo(CompletePurchases.finishForm("Diana","Torres","541030"));
 
     }
     @Then("the successful purchase will be verified")

@@ -1,18 +1,13 @@
 package com.co.choucair.tasks;
 
-import com.co.choucair.models.UserLoombokData;
-import com.co.choucair.userinterfaces.SerenityLoginPage;
-import net.serenitybdd.core.steps.Instrumented;
 import net.serenitybdd.screenplay.Actor;
 
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
-import net.serenitybdd.screenplay.actions.JavaScriptClick;
-import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
+import static com.co.choucair.userinterfaces.SerenityLoginPage.*;
 
 public class Login implements Task {
 
@@ -27,9 +22,9 @@ public class Login implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Enter.theValue(username).into(SerenityLoginPage.TXT_USER),
-                Enter.theValue(password).into(SerenityLoginPage.TXT_PASS),
-                Click.on(SerenityLoginPage.BTN_LOGIN)
+                Enter.theValue(username).into(TXT_USER),
+                Enter.theValue(password).into(TXT_PASS),
+                Click.on(BTN_LOGIN)
 
         );
     }
